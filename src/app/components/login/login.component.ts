@@ -44,7 +44,6 @@ export class LoginComponent {
           this.router.navigate(['/history']);
         },
         error: (err) => {
-          console.log(err)
           Swal.fire({
             title: err.error.title,
             text: err.error.message,

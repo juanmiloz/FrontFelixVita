@@ -1,6 +1,6 @@
-<div class="w-full h-full flex justify-center items-center bg-gradient-to-r from-felix-primary to-felix-accent">
-  <div class="overflow-x-auto">
-    <table class="table  bg-white">
+<div class="w-full h-full flex flex-col items-center gap-4 bg-gradient-to-r from-felix-primary to-felix-accent p-4">
+  <div class="w-full ">
+    <table class="table bg-white">
       <!-- head -->
       <thead>
         <tr>
@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let metric of metrics; let i = index">
+        <tr *ngFor="let metric of metrics; let i = index" class="border-t border-b-0">
           <th>{{  i + 1 }}</th>
           <td>{{ metric.waterIntake }}</td>
           <td>{{ metric.sleepHours }}</td>
@@ -20,4 +20,14 @@
       </tbody>
     </table>
   </div>
+
+  <button class="btn" onclick="my_modal_3.showModal()">add metric</button>
+  <dialog id="my_modal_3" class="modal">
+    <div class="modal-box bg-white">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" (click)="closeModal()">✕</button>
+      </form>
+      <app-add-metric></app-add-metric>
+    </div>
+  </dialog>
 </div>

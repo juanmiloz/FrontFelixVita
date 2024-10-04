@@ -56,7 +56,6 @@ export class AddMetricComponent {
 
   addMetric() {
     if (this.metricForm.valid) {
-      console.log(this.metricForm.value);
       this.metricsService.createMetric(this.metricForm.value).subscribe({
         next: (res) => {
           Swal.fire({

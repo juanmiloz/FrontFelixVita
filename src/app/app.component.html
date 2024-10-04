@@ -35,8 +35,8 @@
         <button class="btn btn bg-felix-primary border-0 text-felix-gray" routerLink="/register">register</button>
       </div> -->
       <div class="flex gap-2 mx-3" *ngIf="isLoggedIn()">
-        <button class="btn bg-felix-primary border-0 text-felix-gray " routerLink="/history">History</button>
-        <button class="btn bg-felix-primary border-0 text-felix-gray " routerLink="/add-metric">Add Metric</button>
+        <!-- <button class="btn bg-felix-primary border-0 text-felix-gray " routerLink="/history">History</button>
+        <button class="btn bg-felix-primary border-0 text-felix-gray " routerLink="/add-metric">Add Metric</button> -->
         <button class="btn bg-felix-primary border-0 text-felix-gray " (click)="deleteToken()" routerLink="./auth/login">logout</button>
       </div>
     </div>
