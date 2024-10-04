@@ -1,0 +1,55 @@
+<div class="w-full h-full flex justify-center items-center bg-gradient-to-r from-felix-primary to-felix-accent">
+  <div class="bg-white flex flex-col gap-2 p-6 rounded-md items-center">
+    <h1 class="text-2xl font-semibold">Add Metrics</h1>
+    <form [formGroup]="metricForm" (ngSubmit)="addMetric()" class="flex flex-col gap-y-4">
+      <div class="flex flex-col">
+        <input
+          type="number"
+          min="0"
+          placeholder="Whater Intake"
+          class="input input-bordered w-full max-w-xs bg-white"
+          (input)="onInput($event)"
+          formControlName="waterIntake"
+          id="waterIntake"
+        />
+        <div *ngIf="waterIntake?.errors?.['required'] && waterIntake?.touched">
+          <div [ngStyle]="{color: 'tomato'}">The water intake is mandatory</div>
+        </div>
+        <span class="text-gray-500">Enter the value in milliliters.</span>
+      </div>
+      <div class="flex flex-col">
+        <input
+          type="number"
+          min="0"
+          placeholder="Sleep hours"
+          class="input input-bordered w-full max-w-xs bg-white"
+          (input)="onInput($event)"
+          formControlName="sleepHours"
+          id="sleepHours"
+        />
+        <span  class="text-gray-500">Enter the value in hours.</span>
+        <div *ngIf="sleepHours?.errors?.['required'] && sleepHours?.touched">
+          <div [ngStyle]="{color: 'tomato'}">The sleep hours is mandatory</div>
+        </div>
+      </div>
+      <div>
+        <select class="select select-bordered w-full max-w-xs bg-white" formControlName="mood">
+          <option disabled selected>What is your mood?</option>
+          <option>Happy</option>
+          <option>Normal</option>
+          <option>Stressed</option>
+        </select>
+        <div *ngIf="mood?.errors?.['required'] && mood?.touched">
+          <div [ngStyle]="{color: 'tomato'}">The mood is mandatory</div>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn bg-felix-accent text-white border-0 text-base"
+      >
+        Add Metric
+      </button>
+    </form>
+  </div>
+</div>

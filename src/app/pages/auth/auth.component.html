@@ -1,0 +1,21 @@
+<div class="h-full w-full flex justify-center items-center">
+  <div class="h-4/6 w-7/12 flex bg-white border rounded-2xl drop-shadow-xl">
+    <div class="w-1/2 flex items-center justify-center">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="flex w-1/2 h-full flex-col justify-center items-center gap-3 bg-team bg-no-repeat bg-cover bg-center relative text-white" *ngIf="isLoginMode">
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(147, 186, 88, 0.8), rgba(97, 147, 150, 0.8));"></div>
+
+      <p class="relative font-semibold text-4xl">Welcome to login</p>
+      <span class="relative">Don't have an account</span>
+      <button class="btn bg-felix-accent text-white border-0 relative" routerLink="./register" (click)="changeMode()">Register</button>
+    </div>
+    <div class="flex w-1/2 h-full flex-col justify-center items-center gap-3 bg-team bg-no-repeat bg-cover bg-center relative text-white"  *ngIf="!isLoginMode">
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(147, 186, 88, 0.8), rgba(97, 147, 150, 0.8));"></div>
+
+      <p class="relative font-semibold text-4xl">Welcome to register</p>
+      <span class="relative">Already have an account?</span>
+      <button class="btn bg-felix-accent text-white border-0 relative" routerLink="./login" (click)="changeMode()">LogIn</button>
+    </div>
+  </div>
+</div>

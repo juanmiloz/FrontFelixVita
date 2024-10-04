@@ -1,0 +1,23 @@
+<div class="w-full h-full flex justify-center items-center bg-gradient-to-r from-felix-primary to-felix-accent">
+  <div class="overflow-x-auto">
+    <table class="table  bg-white">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th></th>
+          <th>water intake</th>
+          <th>sleep hour</th>
+          <th>mood</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let metric of metrics; let i = index">
+          <th>{{  i + 1 }}</th>
+          <td>{{ metric.waterIntake }}</td>
+          <td>{{ metric.sleepHours }}</td>
+          <td>{{ metric.mood }}</td>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+</div>
